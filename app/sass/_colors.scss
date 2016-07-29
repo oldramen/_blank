@@ -1,0 +1,37 @@
+/*
+  Colors - For the site, obviously.
+*/
+
+// define variables
+$color-black: #262626;
+$color-black-light: #2B2B2B;
+$color-red: #E34E3D;
+$color-red-dark: #C1392B;
+$color-blue: #3496DA;
+$color-blue-dark: #2580BD;
+$color-green: #2ACD72;
+$color-green-dark: #2BAB5E;
+$color-orange: #DF802F;
+$color-orange-dark: #DA5706;
+$color-white: #EBF0F0;
+$color-white-dark: #C2C7CC;
+
+// generator to build helpers
+@mixin colorClass($color, $tag) {
+  .c-#{$tag} { color: $color; }
+  .bg-#{$tag} { background-color: $color; }
+}
+
+// generate dem color helpers
+@include colorClass($color-black, "black");
+@include colorClass($color-black-light, "black-light");
+@include colorClass($color-red, "red");
+@include colorClass($color-red-dark, "red-dark");
+@include colorClass($color-blue, "blue");
+@include colorClass($color-blue-dark, "blue-dark");
+@include colorClass($color-green, "green");
+@include colorClass($color-green-dark, "green-dark");
+@include colorClass($color-orange, "orange");
+@include colorClass($color-orange-dark, "orange-dark");
+@include colorClass($color-white, "white");
+@include colorClass($color-white-dark, "white-dark");
