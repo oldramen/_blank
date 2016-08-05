@@ -15,6 +15,8 @@ $color-orange: #DF802F;
 $color-orange-dark: #DA5706;
 $color-white: #EBF0F0;
 $color-white-dark: #C2C7CC;
+$color-grey: #5B686E;
+$color-grey-dark: #29383F;
 
 // generator to build helpers
 @mixin colorClass($color, $tag) {

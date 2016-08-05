@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
   elixir = require('laravel-elixir'),
   riot = require('gulp-riot'),
+  concat = require('gulp-concat'),
   bower = './bower_components/',
   sass = './app/sass/',
   scripts = './app/scripts/',
@@ -10,8 +11,9 @@ elixir.config.sourcemaps = false;
 // define compiler
 gulp.task('compile', function() {
   gulp.src(tags)
+    .pipe(concat('compiled-tags.js'))
     .pipe(riot())
-    .pipe(gulp.dest('./app/scripts/compiled-tags.js'));
+    .pipe(gulp.dest('./app/scripts/'));
 });
 
 elixir(function(mix) {

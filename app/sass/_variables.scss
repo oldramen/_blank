@@ -1,0 +1,33 @@
+/*
+  Variables - For the site, obviously.
+*/
+
+// define app color variables
+$c-background: $color-black;
+$c-border: $color-black-light;
+
+$c-text: $color-white;
+$c-subtle: $color-grey;
+$c-muted: $color-grey-dark;
+
+$c-main: $color-red;
+$c-main-dark: $color-red-dark;
+
+$c-accent: $color-orange;
+$c-accent-dark: $color-orange-dark;
+
+$c-link: $c-accent;
+$c-link-hover: $c-accent;
+
+// generate dem color helpers
+@include colorClass($c-background, "background");
+@include colorClass($c-border, "border");
+@include colorClass($c-accent, "accent");
+@include colorClass($c-main, "main");
+@include colorClass($c-text, "text");
+@include colorClass($c-subtle, "subtle");
+@include colorClass($c-muted, "muted");
+
+// fonts
+$font-body: "Open Sans", sans-serif;
+$font-header: "Montserrat", sans-serif;

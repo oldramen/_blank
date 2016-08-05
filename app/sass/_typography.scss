@@ -1,0 +1,19 @@
+/*
+  Typography - do it for the font
+*/
+
+h1,h2,h3,h4,h5,h6,.title {
+  font-weight: 700;
+  font-family: $font-header;
+}
+a {
+  color: $c-link;
+  text-decoration: none;
+}
+
+// typography helpers
+.up { text-transform: uppercase; }
+.cap { text-transform: capitalize; }
+.bld { font-weight: 700; }
+.tc { text-align: center; }
+.tr { text-align: right; }
