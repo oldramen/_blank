@@ -22,10 +22,76 @@ fieldset {
 p {
   font-size: 0.85rem;
 }
+*[data-toggle] {
+  cursor: pointer;
+}
 
 // contain wrapper
 .contain {
   width: 100%;
   margin: 0 auto;
   max-width: 40rem;
+}
+
+// blocks
+.block {
+  padding: .5rem 1rem;
+  &.text {
+    padding: 1rem 2rem;
+  }
+}
+
+// modals
+.modal {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: $z-modal;
+  position: absolute;
+  background: rgba($c-background, 0.75);
+  &.active {
+    display: block;
+  }
+  &.lg {
+    .box {
+      max-height: 75%;
+    }
+  }
+  .box {
+    top: 4rem;
+    width: 90%;
+    padding: 1rem;
+    overflow: auto;
+    max-width: 40rem;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    border-radius: 4px;
+    background: $c-text;
+    color: $c-background;
+    .close {
+      top: -.2rem;
+      right: .2rem;
+      position: absolute;
+      color: darken($color-white-dark, 10);
+    }
+    h3 {
+      margin-top: 0;
+      padding-top: 0;
+    }
+  }
+}
+
+// buttons
+.button {
+  @extend .label;
+  cursor: pointer;
+  border-radius: 4px;
+  color: $color-black;
+  padding: .2rem .5rem;
+  display: inline-block;
+  background-color: $c-main;
+  border: 1px solid $c-main-dark;
 }
