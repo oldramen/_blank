@@ -19,6 +19,34 @@
 
   <!-- BlankApp -->
   <blankapp id="app" data-toggle-switch-watch>
+
+    <!-- Navigation -->
+    <yield to="navigation">
+      <a href="#blankPage" data-title="Blank Page" class="active">
+        Blank Page
+        <small>Blank Subtitle</small>
+      </a>
+      <a href="#aboutPage" data-title="About Page">
+        About
+        <small>About What?</small>
+      </a>
+    </yield>
+
+    <!-- Pages -->
+    <yield to="pages">
+      <section id="blankPage" class="active">
+        <h1>Blank!!</h1>
+      </section>
+      <section id="aboutPage">
+        <h1>About!!</h1>
+      </section>
+    </yield>
+
+    <!-- Footer -->
+    <yield to="footer">-
+      <a href="http://notawaffle.com/" target="_blank">notawaffle</a>
+    </yield>
+
   </blankapp>
 
   <!-- Vendor Scripts -->

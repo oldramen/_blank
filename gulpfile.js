@@ -11,8 +11,8 @@ elixir.config.sourcemaps = false;
 // define compiler
 gulp.task('compile', function() {
   gulp.src(tags)
-    .pipe(concat('compiled-tags.js'))
     .pipe(riot())
+    .pipe(concat('compiled-tags.js'))
     .pipe(gulp.dest('./app/scripts/'));
 });
 
@@ -42,6 +42,7 @@ elixir(function(mix) {
 
     // user scripts
     .scripts([
+      scripts + 'router.js',
       scripts + 'app.js'
     ], './dist/js/app.js');
 });

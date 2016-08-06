@@ -7,8 +7,8 @@ $c-background: $color-black;
 $c-border: $color-black-light;
 
 $c-text: $color-white;
-$c-subtle: $color-grey;
-$c-muted: $color-grey-dark;
+$c-subtle: $color-white-dark;
+$c-muted: $color-grey;
 
 $c-main: $color-red;
 $c-main-dark: $color-red-dark;
@@ -30,4 +30,9 @@ $c-link-hover: $c-accent;
 
 // fonts
 $font-body: "Open Sans", sans-serif;
-$font-header: "Montserrat", sans-serif;
+$font-display: "Montserrat", sans-serif;
+
+// z-index's
+$z-modal: 10;
+$z-topbar: 9;
+$z-sidebar: 8;

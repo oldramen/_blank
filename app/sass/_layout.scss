@@ -1,6 +1,9 @@
 /*
   Layout - for the framework
 */
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -25,27 +28,4 @@ p {
   width: 100%;
   margin: 0 auto;
   max-width: 40rem;
-}
-
-// structure
-#nav {
-  width: 100%;
-  color: $c-text;
-  background: $c-main;
-  .upper {
-    padding: .25rem 1rem;
-    background: $c-main-dark;
-  }
-  .main {
-    padding: .5rem 1rem;
-    .menu {
-      margin-right: .5rem;
-      display: inline-block;
-    }
-    .title {
-      margin: 0;
-      padding: 0;
-      font-size: 1rem;
-    }
-  }
 }
