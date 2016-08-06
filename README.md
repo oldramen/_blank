@@ -6,4 +6,4 @@ A starting point.
 - clone repo
 - `npm install`
 - `bower install`
-- `gulp && gulp watch`
+- `gulp watch`
