@@ -1,5 +1,5 @@
-riot.tag2('blankapp', '<div id="topbar"> <div class="upper"></div> <div class="main contain"> <div class="row"> <div class="col-xs"> <span class="menu" data-toggle="#sidebar"><i class="fa fa-bars"></i></span> <span class="title">{pageTitle}</span> </div> </div> </div> </div> <aside id="sidebar"> <nav id="nav"> <yield from="navigation"></yield> </nav> </aside> <div id="pages"> <yield from="pages"></yield> <footer> {appName} v{appVersion} <yield from="footer"></yield> </footer> </div>', 'blankapp { width: 100%; }', '', function(opts) {
-    this.appName = "blankapp";
+riot.tag2('blank', '<div id="topbar"> <div class="upper"></div> <div class="main contain"> <div class="row"> <div class="col-xs"> <span class="menu" data-toggle="#sidebar"><i class="fa fa-bars"></i></span> <span class="title">{pageTitle}</span> </div> </div> </div> </div> <aside id="sidebar"> <nav id="nav"> <yield from="navigation"></yield> </nav> </aside> <div id="pages"> <yield from="pages"></yield> <footer> {appName} v{appVersion} <yield from="footer"></yield> </footer> </div>', 'blank { width: 100%; }', '', function(opts) {
+    this.appName = "blank";
     this.pageTitle = "Blank App.";
     this.appVersion = "0.1";
 
@@ -18,4 +18,8 @@ riot.tag2('blankapp', '<div id="topbar"> <div class="upper"></div> <div class="m
 
       riot.route.exec();
     });
+});
+
+riot.tag2('blankpage', '<h1>Blank!!!</h1>', '', '', function(opts) {
+    this.app = this.parent;
 });

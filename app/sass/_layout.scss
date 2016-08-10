@@ -86,7 +86,6 @@ p {
 
 // buttons
 .button {
-  @extend .label;
   cursor: pointer;
   border-radius: 4px;
   color: $color-black;
