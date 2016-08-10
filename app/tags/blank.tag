@@ -1,4 +1,4 @@
-<blankapp>
+<blank>
   <!-- Navigation Bar -->
   <div id="topbar">
     <div class="upper"></div>
@@ -29,13 +29,13 @@
   </div>
 
   <style>
-    blankapp {
+    blank {
       width: 100%;
     }
   </style>
 
   <script>
-    this.appName = "blankapp";
+    this.appName = "blank";
     this.pageTitle = "Blank App.";
     this.appVersion = "0.1";
 
@@ -57,4 +57,4 @@
     });
   </script>
 
-</blankapp>
+</blank>
