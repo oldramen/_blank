@@ -34,7 +34,6 @@ elixir(function(mix) {
     .scripts([
       // vendor
       bower + 'riot/riot.min.js',
-      bower + 'toggles-switches/toggles-switches.js',
       bower + 'hammerjs/hammer.js',
       // compiled scripts
       scripts + 'compiled-tags.js'
