@@ -110,6 +110,7 @@
     // app functions
     this.sidebar = function() {
       this.toggle("#sidebar");
+      return true; // for click-through
     };
 
     this.on('mount', function() {
