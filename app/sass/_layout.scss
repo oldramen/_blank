@@ -94,3 +94,23 @@ p {
   background-color: $c-main;
   border: 1px solid $c-main-dark;
 }
+
+// Pages
+#pages {
+  section {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+  footer {
+    width: 100%;
+    color: $c-muted;
+    font-size: .75rem;
+    padding: 1.5rem 1rem 1rem;;
+    text-align: center;
+    a {
+      color: $c-subtle;
+    }
+  }
+}
