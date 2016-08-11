@@ -6,7 +6,7 @@
       <div class="row">
         <div class="col-xs">
           <span class="menu" onclick={ sidebar }><i class="fa fa-bars"></i></span>
-          <span class="title">{ pageTitle }</span>
+          <span class="title">{ pageTitle }<span class="cap"></span></span>
         </div>
       </div>
     </div>
@@ -36,7 +36,7 @@
 
   <script>
     this.appName = "blank";
-    this.pageTitle = "Blank App.";
+    this.pageTitle = "BLANK";
     this.appVersion = "0.1";
 
     // app tools
