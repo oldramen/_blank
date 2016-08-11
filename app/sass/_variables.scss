@@ -3,21 +3,27 @@
 */
 
 // define app color variables
-$c-background: $color-black;
-$c-border: $color-black-light;
+$c-background: $clr-blue-grey-900;
+$c-border: $clr-blue-grey-800;
 
-$c-text: $color-white;
-$c-subtle: $color-white-dark;
-$c-muted: $color-grey;
+$c-text: $clr-grey-200;
+$c-subtle: $clr-grey-400;
+$c-muted: $clr-grey-600;
 
-$c-main: $color-red;
-$c-main-dark: $color-red-dark;
+$c-main: $clr-red-700;
+$c-main-dark: $clr-red-900;
 
-$c-accent: $color-orange;
-$c-accent-dark: $color-orange-dark;
+$c-accent: $clr-orange-700;
+$c-accent-dark: $clr-orange-900;
 
 $c-link: $c-accent;
 $c-link-hover: $c-accent;
+
+// generator to build helpers
+@mixin colorClass($color, $tag) {
+  .c-#{$tag} { color: $color; }
+  .bg-#{$tag} { background-color: $color; }
+}
 
 // generate dem color helpers
 @include colorClass($c-background, "background");

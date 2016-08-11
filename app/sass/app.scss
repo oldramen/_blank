@@ -1,4 +1,3 @@
-
 // flexbox grid
 @import "../../bower_components/flexboxgrid/dist/flexboxgrid";
 // typebase.css
@@ -7,9 +6,10 @@
 @import "../../bower_components/font-awesome/scss/font-awesome.scss";
 // animate.css
 @import "../../bower_components/animate.css/animate";
+// material-colors
+@import "../../bower_components/material-color/material-color.scss";
 
 // custom sass
-@import "colors";
 @import "variables";
 @import "typography";
 @import "layout";

@@ -75,7 +75,7 @@ p {
       top: -.2rem;
       right: .2rem;
       position: absolute;
-      color: darken($color-white-dark, 10);
+      color: darken($c-subtle, 10);
     }
     h3 {
       margin-top: 0;
@@ -88,7 +88,7 @@ p {
 .button {
   cursor: pointer;
   border-radius: 4px;
-  color: $color-black;
+  color: $c-background;
   padding: .2rem .5rem;
   display: inline-block;
   background-color: $c-main;

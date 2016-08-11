@@ -39,7 +39,7 @@
   z-index: $z-sidebar;
   transition: left .25s;
   -webkit-transition: left .25s;
-  background: $color-black-light;
+  background: $c-border;
   &.active {
     left: 0;
   }
