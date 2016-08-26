@@ -1,117 +1,118 @@
 <blank>
+
   <!-- Navigation Bar -->
   <div id="topbar">
-    <div class="upper"></div>
-    <div class="main contain">
-      <div class="row">
-        <div class="col-xs">
-          <span class="menu" onclick={ sidebar }><i class="fa fa-bars"></i></span>
-          <span class="title">{ pageTitle }<span class="cap"></span></span>
+    <div class="contain">
+      <div class="grid-2_xs-1">
+        <div class="col center-sm">
+          <span class="menu hidden-lgi">
+            <i class="fa fa-bars" onclick={ sidebar }></i>
+          </span>
+          <span class="page-title">
+            { app.name }
+          </span>
+        </div>
+        <div class="col hidden-sm tr">
+          <nav>
+            <yield from="navigation"/>
+          </nav>
         </div>
       </div>
     </div>
   </div>
 
-  <aside id="sidebar" onclick={ hideSidebar }>
-    <nav id="nav">
-      <yield from="navigation" />
-    </nav>
+  <!-- Sidebar -->
+  <aside class="hidden-lg active" id="sidebar" onclick={ hideSidebar }>
+    <yield from="navigation"/>
+
+    <footer>
+      <a href="#">{ app.name }</a> v{ app.version }
+    </footer>
   </aside>
 
+  <!-- Content  -->
   <div id="pages" onclick={ hideSidebar }>
-    <yield from="pages" />
-
-    <!-- Global Footer for all pages -->
-    <footer>
-      { appName } v{ appVersion }
-      <yield from="footer" />
-    </footer>
+    <yield from="pages"/>
   </div>
 
-  <style>
-    blank {
-      width: 100%;
-    }
-  </style>
-
   <script>
-    this.appName = "blank";
-    this.pageTitle = "BLANK";
-    this.appVersion = "0.1";
 
-    // app tools
-    this.app = {
-      getDom: function(el, data) {
-        // quick function to get an element from, well, anything
-        if (el) {
-          if (typeof el === "string") {
-            el = document.querySelector(el);
-          } else if (el.target) {
-            el = document.querySelector(el.target.dataset[data]);
-          }
+    var app = {
+      name: "blank",
+      version: "1.0.0",
+      pageTitle: "a blank page.",
+
+      // A suite of dom manipulation tools!
+      dom: function(el, data, all) { // Get Element
+        if (!el) return { error: "No Element Passed!" };
+        if (el.target && !data) return { error: "Missing Data." };
+        if (typeof el === "string") {
+          if (!all) el = document.querySelector(el);
+          else el = document.querySelectorAll(el);
         }
-        if (el && el.tagName) return el;
-        return false;
+        if (el.target) {
+          if (!all) el = document.querySelector(el.target.dataset[data]);
+          else el = document.querySelectorAll(el.target.dataset[data]);
+        }
+        if (el.tagName) return el;
+        return { error: "Couldn't find DOM element: " + el };
       },
-      getAll: function(el, data) {
-        // same as above, but all instances
-        if (typeof el === "string") el = document.querySelectorAll(el);
-        if (el.target) el = document.querySelectorAll(el.target.dataset[data]);
-        if (el[0] && el[0].tagName) return el;
-        return [];
+
+
+      domAll: function(el, data) { // Get All Elements
+        return this.dom(el, data, true);
       },
+
       hasClass: function(el, search) {
-        el = this.getDom(el);
+        if (!el.tagName) el = this.dom(el);
         var rgx = new RegExp('(^| )' + search + '( |$)', 'gi');
         if (el && el.classList) return el.classList.contains(search);
         if (el && el.className) return rgx.test(el.className);
         return false;
       },
-      show: function(el) {
-        // add "active" class
-        el = this.getDom(el, "show");
+
+      show: function(el) { // adds "active" class)
+        if (!el.tagName) el = this.dom(el);
         if (el && el.classList) el.classList.add("active");
         else if (el) el.className += " active";
         return true; // for click-through
       },
-      hide: function(el) {
-        // remove "active" class
-        el = this.getDom(el, "hide");
+
+      hide: function(el) { // remove "active" class
+        if (!el.tagName) el = this.dom(el, "hide");
         if (el && el.classList) el.classList.remove("active");
         else if (el) el.className = el.className.replace("active", " ");
         return true; // for click-through
       },
+
       hideAll: function(el) {
-        el = this.getAll(el, "hide");
-        el.forEach(function(item) {
-          this.hide(item);
+        var _hide = this.hide;
+        el = this.domAll(el, "hide");
+        el.forEach(function(element) {
+          _hide(element);
         });
       },
+
       showAll: function(el) {
-        el = this.getAll(el, "show");
-        el.forEach(function(item) {
-          this.show(item);
+        var _show = this.show;
+        el = this.domAll(el, "show");
+        el.forEach(function(element) {
+          _show(element);
         });
       },
-      toggle: function(el) {
-        // toggle active class
-        el = this.getDom(el, "toggle");
+
+      toggle: function(el) { // toggle active class
+        if (!el.tagName) el = this.dom(el, "toggle");
         if (el && this.hasClass(el, "active")) this.hide(el);
         else if (el) this.show(el);
         return true; // for click-through
-      },
-    };
+      }
 
-    // app functions
-    this.sidebar = function() {
-      this.app.toggle("#sidebar");
-      return true; // for click-through
     };
+    this.app = app;
 
-    this.hideSidebar = function() {
-      this.app.hide("#sidebar.active");
-      return true;
-    };
+    this.sidebar = function() { app.toggle("#sidebar"); };
+    this.hideSidebar = function() { app.hide("#sidebar"); };
 
     this.on('mount', function() {
 

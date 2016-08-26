@@ -34,14 +34,12 @@ elixir(function(mix) {
     .scripts([
       // vendor
       bower + 'riot/riot.min.js',
-      bower + 'hammerjs/hammer.js',
       // compiled scripts
       scripts + 'compiled-tags.js'
     ], './dist/js/vendor.js')
 
     // user scripts
     .scripts([
-      scripts + 'router.js',
-      scripts + 'app.js'
+      scripts + 'router.js'
     ], './dist/js/app.js');
 });

@@ -3,21 +3,30 @@
 */
 
 // define app color variables
-$c-background: $clr-blue-grey-900;
-$c-border: $clr-blue-grey-800;
+$c-background: $clr-grey-50;
+$c-border: $clr-grey-200;
 
-$c-text: $clr-grey-200;
-$c-subtle: $clr-grey-400;
-$c-muted: $clr-grey-600;
+$c-text: $clr-grey-900;
+$c-subtle: $clr-grey-600;
+$c-muted: $clr-grey-400;
 
-$c-main: $clr-red-700;
-$c-main-dark: $clr-red-900;
+$c-main: $clr-teal-a700;
+$c-main-dark: $clr-teal-700;
+$c-main-light: $clr-teal-200;
 
-$c-accent: $clr-orange-700;
-$c-accent-dark: $clr-orange-900;
+$c-accent: $clr-cyan-600;
+$c-accent-dark: $clr-cyan-800;
+$c-accent-light: $clr-cyan-200;
 
 $c-link: $c-accent;
 $c-link-hover: $c-accent;
+
+// Overwrite Grid Breakpoints
+
+$gl-xs: "screen and (max-width: 35.5em)";
+$gl-sm: "screen and (max-width: 35.5em)";
+$gl-md: "screen and (min-width: 35.51em)";
+$gl-lg: "screen and (min-width: 35.51em)";
 
 // generator to build helpers
 @mixin colorClass($color, $tag) {

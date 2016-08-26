@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <!-- Title -->
@@ -18,33 +18,25 @@
 <body>
 
   <!-- BlankApp -->
-  <blank id="app" data-toggle-switch-watch>
+  <blank id="app">
 
     <!-- Navigation -->
     <yield to="navigation">
-      <a href="#blank" class="active">
-        Blank Page
-        <small>Blank Subtitle</small>
-      </a>
+      <a href="#home" class="active">Home</a>
       <a href="#about">
         About
-        <small>About What?</small>
+        <small>Information</small>
       </a>
     </yield>
 
     <!-- Pages -->
     <yield to="pages">
-      <section id="blank" class="active">
-        <blankpage></blankpage>
+      <section id="home" class="active">
+        <home></home>
       </section>
       <section id="about">
-        <h1>About!!</h1>
+        About!
       </section>
-    </yield>
-
-    <!-- Footer -->
-    <yield to="footer">-
-      <a href="http://notawaffle.com/" target="_blank">notawaffle</a>
     </yield>
 
   </blank>
@@ -54,5 +46,9 @@
 
   <!-- App Scripts -->
   <script src="./js/app.js"></script>
+
+  <script>
+    riot.mount("blank");
+  </script>
 </body>
 </html>

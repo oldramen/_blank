@@ -5,24 +5,45 @@
 // Top Bar
 #topbar {
   width: 100%;
-  color: $c-text;
+  color: $c-main;
+  position: fixed;
   z-index: $z-topbar;
-  position: relative;
-  background: $c-main;
-  .upper {
-    padding: .25rem 1rem;
-    background: $c-main-dark;
+  background: $c-background;
+  font-family: $font-display;
+  border-bottom: 1px solid $c-border;
+  &::before {
+    width: 100%;
+    content: ' ';
+    display: block;
+    height: 0.15rem;
+    background: $c-main;
   }
-  .main {
-    padding: .5rem 1rem;
+  .col {
+    padding: 0.5rem;
     .menu {
-      margin-right: .5rem;
-      display: inline-block;
+      float:left;
     }
-    .title {
-      margin: 0;
-      padding: 0;
-      font-size: 1rem;
+    .page-title {
+      font-weight: 700;
+    }
+  }
+  nav {
+    a {
+      color: $c-muted;
+      font-weight: 700;
+      font-size: .75rem;
+      padding-left: .5rem;
+      text-transform: uppercase;
+      font-family: $font-display;
+      &:not(:last-of-type) {
+        padding-right: .5rem;
+      }
+      &.active, &:hover {
+        color: $c-main;
+      }
+      small {
+        display: none;
+      }
     }
   }
 }
@@ -34,34 +55,49 @@
   left: -10rem;
   width: 10rem;
   height: 100%;
-  display: block;
   position: fixed;
+  padding-top: 2.3rem;
   z-index: $z-sidebar;
+  background: $c-background;
+  border-right: 1px solid $c-border;
   transition: left .25s;
   -webkit-transition: left .25s;
-  background: $c-border;
   &.active {
     left: 0;
   }
-  #nav {
-    margin: 4rem 0 0 0;
-    a {
-      color: $c-text;
+  a {
+    color: $c-text;
+    display: block;
+    font-weight: 700;
+    font-size: .75rem;
+    padding: .5rem 1rem;
+    text-transform: uppercase;
+    font-family: $font-display;
+    border-right: 4px solid $c-border;
+    border-bottom: 1px solid $c-border;
+    &.active {
+      background-color: $c-border;
+      border-right-color: $c-main;
+    }
+    small {
       display: block;
-      font-weight: 700;
-      font-size: .85rem;
-      line-height: .85rem;
-      padding: .5rem 1rem;
-      font-family: $font-display;
-      &.active {
-        background-color: $c-background;
-      }
-      small {
-        display: block;
-        color: $c-subtle;
-        font-size: .6rem;
-        text-transform: uppercase;
-      }
+      color: $c-muted;
+    }
+  }
+  footer {
+    bottom: 0;
+    font-weight: 700;
+    font-family: $font-display;
+    padding: .5rem 1rem;
+    position: absolute;
+    font-size: 0.75rem;
+    color: $c-muted;
+    a {
+      border: none;
+      color: $c-subtle;
+      padding: 0 .2rem 0 0;
+      text-transform: none;
+      display: inline-block;
     }
   }
 }

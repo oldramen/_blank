@@ -1,5 +1,5 @@
 // flexbox grid
-@import "../../bower_components/flexboxgrid/dist/flexboxgrid";
+@import "../../bower_components/gridlex/src/gridlex.scss";
 // typebase.css
 @import "../../bower_components/typebase.css/src/typebase.scss";
 // font-awesome
@@ -11,6 +11,7 @@
 
 // custom sass
 @import "variables";
+@import "responsive";
 @import "typography";
 @import "layout";
 @import "navigation";
