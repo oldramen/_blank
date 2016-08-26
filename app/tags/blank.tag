@@ -22,7 +22,7 @@
   </div>
 
   <!-- Sidebar -->
-  <aside class="hidden-lg active" id="sidebar" onclick={ hideSidebar }>
+  <aside class="hidden-lg" id="sidebar" onclick={ hideSidebar }>
     <yield from="navigation"/>
 
     <footer>
@@ -113,8 +113,14 @@
     };
     this.app = app;
 
-    this.sidebar = function() { app.toggle("#sidebar"); };
-    this.hideSidebar = function() { app.hide("#sidebar"); };
+    this.sidebar = function() {
+      app.toggle("#sidebar");
+      return true; // for click-through
+    };
+    this.hideSidebar = function() {
+      app.hide("#sidebar");
+      return true; // for click-through
+    };
 
     this.on('mount', function() {
 
