@@ -32,7 +32,9 @@
 
   <!-- Content  -->
   <div id="pages" onclick={ hideSidebar }>
-    <yield from="pages"/>
+    <div class="contain">
+      <yield from="pages"/>
+    </div>
   </div>
 
   <script>
